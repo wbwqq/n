@@ -340,7 +340,7 @@ class Notebook:
         else:
             print('TypeError: Note numbers must be integers.')
 
-if __name__ == "__main__":
+def main():
     notebooks = NotebookCollection()
     miniparser.add_command('add', notebooks.add_cmd, nargs=-1, help='add note or add notebook')
     miniparser.add_command('ls', notebooks.ls_cmd, nargs=2, help='list/view notes')
@@ -352,3 +352,6 @@ if __name__ == "__main__":
     miniparser.add_command('get notebooks path', notebooks.get_custom_notebooks_path, nargs=0, help='get notebooks directory path')
     miniparser.add_command('set notebooks path', notebooks.set_custom_notebooks_path, nargs=1, help='set notebooks directory path')
     miniparser.parser()
+
+if __name__ == "__main__":
+    main()

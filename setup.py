@@ -26,7 +26,10 @@ setuptools.setup(
     python_requires=">=3.6",
     entry_points = {
         'console_scripts': [
-            'n = n.n'
+            'n = n:main'
         ]
-    }
+    },
+    install_requires = [
+        'miniparser==0.0.8'
+    ]
 )
