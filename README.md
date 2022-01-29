@@ -1,5 +1,9 @@
 # nnotes
 
+nnotes is a command line note taking tool. The goal is to be able to add, view and manipulate notes quickly and easily.
+
+[![asciicast](https://asciinema.org/a/EqqVnBPGQZgDo2PTTBg5Z6ynS.svg)](https://asciinema.org/a/EqqVnBPGQZgDo2PTTBg5Z6ynS)
+
 ## Installation
 
 ```bash
@@ -44,8 +48,16 @@ Available commands:
     set notebooks path [notebooks path]         set notebooks directory
 ```
 
+### Note for Windows users:
+
+Windows users must wrap arguments starting with @ with single or double quotes (ex. windows users should type `n ls '@'` instead of `n ls @` ), or escape commands starting with @ with a backtick (ex. ``n ls `@`` instead of `n ls @` )
+
+ `n add '@school' new note` would be the way to add 'new note' to the 'school' notebook. Or alternatively:
+ ``n add `@school new note`` would also work.
+
 ## Example usage
 
+`n` and `nnotes` can both be used:
 ```bash
 $ n add new note
 ```
@@ -53,7 +65,6 @@ is the same as:
 ```bash
 $ nnotes add new note
 ```
-`n` and `nnotes` can both be used.
 
 ```bash
 $ n ls
