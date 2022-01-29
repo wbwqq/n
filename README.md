@@ -66,6 +66,8 @@ is the same as:
 $ nnotes add new note
 ```
 
+Other example commands:
+
 ```bash
 $ n ls
 ```
