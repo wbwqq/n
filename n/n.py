@@ -8,11 +8,11 @@ import shutil
 if sys.platform.startswith('linux'):
     files_path = os.path.expanduser('~/.n')
 elif sys.platform.startswith('win32'):
-    # TODO
-    files_path = ''
+    files_path = os.path.expanduser('~/.n')
 elif sys.platform.startswith('darwin'):
-    # TODO
-    files_path = ''
+    files_path = os.path.expanduser('~/.n')
+else:
+    files_path = os.path.expanduser('~/.n')
 
 class NotebookCollection:
     def __init__(self):
@@ -243,8 +243,14 @@ class NotebookCollection:
             # prompt user if sure to create notebook?
             file_name = notebook_name + '.md'
             file_path = os.path.join(self.notebooks_path, file_name)
-            with open(file_path, 'w') as nb_file:
-                nb_file.write(f'# {notebook_name}\n')
+            try:
+                with open(file_path, 'w') as nb_file:
+                    nb_file.write(f'# {notebook_name}\n')
+            # create notebooks dir if it doesn't exist:
+            except:
+                os.makedirs(self.notebooks_path)
+                with open(file_path, 'w') as nb_file:
+                    nb_file.write(f'# {notebook_name}\n')
             with open(self.notebooks_file_path, 'r') as notebooks_file:
                 nb_files_content= notebooks_file.read()
             with open(self.notebooks_file_path, 'a') as notebooks_file:
