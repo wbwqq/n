@@ -18,6 +18,7 @@ Features:
 - delete notes (single, multiple, range)
 - create notebook
 - delete notebook
+- custom notebooks directory
 
 
 ```
