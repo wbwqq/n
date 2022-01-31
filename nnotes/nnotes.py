@@ -4,6 +4,7 @@ import configparser
 import sys
 import os
 import shutil
+from pathlib import Path
 
 if sys.platform.startswith('linux'):
     files_path = os.path.expanduser('~/.n')
@@ -23,9 +24,10 @@ class NotebookCollection:
         self.notebooks_file_path = os.path.join(files_path, 'notebooks.txt')
         # if doesn't exist, create it & copy base settings
         if not os.path.exists(self.notebooks_path):
+            defaults_source_path = Path(__file__).parent.resolve()
             os.makedirs(self.notebooks_path)
-            shutil.copy2(os.path.join('defaults', 'settings.ini'), files_path)
-            shutil.copy2(os.path.join('defaults', 'notebooks.txt'), files_path)
+            shutil.copy2(os.path.join(defaults_source_path, 'defaults', 'settings.ini'), files_path)
+            shutil.copy2(os.path.join(defaults_source_path, 'defaults', 'notebooks.txt'), files_path)
             self.create_notebook('main')
 
         if os.path.exists(os.path.join(files_path, 'settings.ini')):

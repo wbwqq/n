@@ -6,7 +6,7 @@ with open('README.md', 'r', encoding='utf-8') as f:
 
 setuptools.setup(
     name='nnotes',
-    version = '0.0.2',
+    version = '0.0.3',
     author = 'wbwqq',
     description= 'A cli notetaking tool',
     long_description=long_description,
@@ -20,8 +20,8 @@ setuptools.setup(
         'License :: OSI Approved :: GNU General Public License v3 (GPLv3)',
         'Operating System :: OS Independent',
     ],
-    package_dir={'':'nnotes'},
-    py_modules=['nnotes'],
+    packages=['nnotes'],
+    package_data={'nnotes':['defaults/settings.ini', 'defaults/notebooks.txt']},
     python_requires=">=3.6",
     entry_points = {
         'console_scripts': [
