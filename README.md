@@ -29,8 +29,8 @@ Usage (nnotes can be launched by typing 'n' or 'nnotes'):
 Available commands:
     add [note]                                      add note to active notebook
     ls                                              list / view notes from active notebook
-    rm [note num]                                   delete note(s) numbered [note num]
-    rm [note num1] [note num2] [note num3]          delete note(s) specified (however many specified)
+    rm [note num]                                   delete note numbered [note num]
+    rm [note num1] [note num2] [note num3]          delete specified notes (however many specified)
     rm range [note num1] [note num2]                delete notes from [note num1] to [note num2] (included)
     
     add @[notebook] [note]                          add note [note] to notebook [notebook]
