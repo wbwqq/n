@@ -49,7 +49,7 @@ Available commands:
     get notebooks path                              show notebooks directory
     set notebooks path [notebooks path]             set notebooks directory
 
-Example:
+Examples:
     n add this is a note                            "this is a note" added to active notebook
     n add @todo go shopping                         "go shopping" added to "todo" notebook
     n rm 1                                          delete note 1 in active notebook
